@@ -1,6 +1,7 @@
 const int sz = 1e6+2;
 vector<bool> mark(sz, 0);
 vector<int> primes;
+
 void SEIVE(){
     mark[0] = 1;
     mark[1] = 1;
