@@ -1,4 +1,5 @@
 vector<vector<ll>> pascalNum(1e3+2, vector<ll>(1e3+2, 0));
+
 void generatePascalNum(){
     for(int i=0; i<=1e3; i++){
         for(int j=0; j<=1e3; j++){
