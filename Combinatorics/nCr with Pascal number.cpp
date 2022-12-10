@@ -12,6 +12,8 @@ void generatePascalNum(){
         }
     }
 }
+
 ll _nCr(ll a, ll b){
+    generatePascalNum();
     return pascalNum[a][b];
 }
