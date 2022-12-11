@@ -23,13 +23,13 @@ void SEIVE(){
 
 vector<pair<int, int>> primeFact;
 void pff(int n){
-      for(int i=0; i<primes.size(); i++){
-            int cnt = 0;
-            int curr = primes[i];
-            while(curr <= n){
-                cnt += (n / curr);
-                curr *= primes[i];
-                if(curr > n) primeFact.pb({primes[i], cnt});
-         	}
-      }
+     for(int i=0; i<primes.size(); i++){
+         int cnt = 0;
+         int curr = primes[i];
+         while(curr <= n){
+               cnt += (n / curr);
+               curr *= primes[i];
+               if(curr > n) primeFact.pb({primes[i], cnt});
+         }
+     }
 }
