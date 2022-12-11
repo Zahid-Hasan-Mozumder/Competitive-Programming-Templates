@@ -1,4 +1,5 @@
 #define ll long long int
+#define pb push_back
 
 const int sz = 1e6+2;
 vector<bool> mark(sz, 0);
