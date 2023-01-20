@@ -55,7 +55,7 @@ queue<int> q;
 void dijkstra(vvpil &al, int src){
     dist[src] = 0;
     q.push(src);
-    taken[1] = true;
+    taken[src] = true;
     while(!q.empty())
     {
         int u = q.front();
