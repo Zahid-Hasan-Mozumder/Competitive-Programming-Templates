@@ -45,10 +45,11 @@ const double pi = acos(-1.0);
 const double PI = 3.1415926535897;
 
 vll dist(sz, LLONG_MAX);
-priority_queue<pli, vpli, greater<pli>> pq;
 
 void dijkstra(vvpil &al, int src){
+    priority_queue<pli, vpli, greater<pli>> pq;
     dist[src] = 0;
+    pq.push({dist[src], src});
     while(!pq.empty())
     {
         int u = pq.top().ss;
@@ -78,6 +79,5 @@ int main(){
         al[u].pb({v, w});
         al[v].pb({u, w});
     }
-    pq.push({0, 1});
     dijkstra(al, 1);
 }
