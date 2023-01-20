@@ -43,24 +43,23 @@ const double pi = acos(-1.0);
 const double PI = 3.1415926535897;
 
 vll dist(sz, LLONG_MAX);
-set<pli> pq;
 
 void dijkstra(vvpil &al, int src){
+    set<pli> s;
     dist[src] = 0;
     while(!pq.empty())
     {
-        int u = pq.begin()->ss;
-        pq.erase(pq.begin());
+        int u = s.begin()->ss;
+        s.erase(s.begin());
         for(int i=0; i<al[u].size(); i++)
         {
             int v = al[u][i].ff;
             ll cost_uv = al[u][i].ss;
             if(dist[u] + cost_uv < dist[v])
             {
-                pq.erase({dist[v], v});
+                s.erase({dist[v], v});
                 dist[v] = dist[u] + cost_uv;
-                lastUpdate[v] = u;
-                pq.insert({dist[v], v});
+                s.insert({dist[v], v});
             }
         }
     }
@@ -72,11 +71,11 @@ int main(){
     cin>>n>>m;
     vvpil al(n+1);
     for(int i=0; i<m; i++){
-        int u, v, w;
+        int u, v; ll w;
         cin>>u>>v>>w;
         al[u].pb({v, w});
         al[v].pb({u, w});
     }
-    pq.insert({0, 1});
+    s.insert({0, 1});
     dijkstra(al, 1);
 }
