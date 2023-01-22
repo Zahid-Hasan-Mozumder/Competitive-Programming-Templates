@@ -51,9 +51,9 @@ const double PI = 3.1415926535897;
 vll dist(sz, LLONG_MAX); 
 vb taken(sz, false);
 vi parent(sz, -1);
-queue<int> q;
 
 void dijkstra(vvpil &al, int src){
+    queue<int> q;
     dist[src] = 0; parent[src] = -1;
     q.push(src);
     taken[src] = true;
