@@ -81,7 +81,7 @@ void dijkstra(vvpil &al, int src){
 }
 
 void printPath(int des, int src){
-    if(des != src) printPath(parent[des]);
+    if(des != src) printPath(parent[des], src);
     cout<< des << " ";
 }
 
