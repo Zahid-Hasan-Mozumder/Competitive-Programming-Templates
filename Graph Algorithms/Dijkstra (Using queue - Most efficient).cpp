@@ -50,10 +50,11 @@ const double PI = 3.1415926535897;
 
 vll dist(sz, LLONG_MAX); 
 vb taken(sz, false);
+vi parent(sz, -1);
 queue<int> q;
 
 void dijkstra(vvpil &al, int src){
-    dist[src] = 0;
+    dist[src] = 0; parent[src] = -1;
     q.push(src);
     taken[src] = true;
     while(!q.empty())
@@ -68,6 +69,7 @@ void dijkstra(vvpil &al, int src){
             if(dist[u] + cost_uv <= dist[v])
             {
                 dist[v] = dist[u] + cost_uv;
+                parent[v] = u;
                 if(!taken[v])
                 {
                     taken[v] = true;
@@ -76,6 +78,11 @@ void dijkstra(vvpil &al, int src){
             }
         }
     }
+}
+
+void printPath(int des, int src){
+    if(des != src) printPath(parent[des]);
+    cout<< des << " ";
 }
 
 int main(){
@@ -91,4 +98,5 @@ int main(){
     }
     int src; cin>>src;
     dijkstra(al, src);
+    printPath(n, src);
 }
