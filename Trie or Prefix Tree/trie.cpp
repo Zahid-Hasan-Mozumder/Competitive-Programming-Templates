@@ -58,7 +58,7 @@ struct node{
 
 node *root = new node('\0');
 
-void insert(string s){
+void add(string s){
     node *curr = root;
     for(int i=0; i<s.size(); i++){
         int ind = s[i] - 'a';
@@ -70,6 +70,15 @@ void insert(string s){
             curr->child[ind] = new node(s[i]);
             curr = curr->child[ind];
         }
+    }
+}
+
+void sub(string s){
+    node *curr = root;
+    for(int i=0; i<s.size(); i++){
+        int ind = s[i] - 'a';
+        curr = curr->child[ind];
+        curr->cnt--;
     }
 }
 
@@ -95,7 +104,10 @@ int main(){
         string a, b;
         cin>>a>>b;
         if(a == "add"){
-            insert(b);
+            add(b);
+        }
+        else if(a == "remove"){
+            sub(b);
         }
         else if(a == "find"){
             int ans = search(b);
