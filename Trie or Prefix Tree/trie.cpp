@@ -96,6 +96,14 @@ int search(string s){
     return curr->cnt;
 }
 
+void del(node *curr){
+    for(int i=0; i<26; i++){
+        if(curr->child[i] != NULL){
+            del(curr->child[i]);
+        }
+    }
+    delete(curr);
+}
 
 int main(){
 
