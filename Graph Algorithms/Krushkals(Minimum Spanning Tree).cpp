@@ -47,6 +47,7 @@ void unionByRank(int u, int v){
 
 void krushkals(vpipii &edges, int n){
     initialize(n);
+    sort(edges.begin(), edges.end());
     for(auto it : edges){
         int w = it.ff, u = it.ss.ff, v = it.ss.ss;
         int upu = findParent(u), upv = findParent(v);
@@ -65,7 +66,6 @@ int main(){
         cin>>u>>v>>w;
         edges.pb({w, {u, v}});
     }
-    sort(edges.begin(), edges.end());
     krushkals(edges, n);
     cout<< sum << '\n';
     for(auto it : mst){
