@@ -13,7 +13,7 @@ void merge(vi &a, vi &cnt, int s, int m, int e){
     while(i < l.size() && j < r.size()){
         if(l[i] > r[j]){
             a[k] = r[j];
-            cnt[m + 1 + j] = (m - i + 1);
+            cnt[m + 1 + j] += (l.size() - i);
             j++;
         }
         else{
