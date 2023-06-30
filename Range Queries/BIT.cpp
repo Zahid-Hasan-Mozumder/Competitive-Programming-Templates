@@ -11,16 +11,9 @@ using namespace std;
 int n, q;
 vll a, tree;
 
-void add(int i, ll x){
+void update(int i, ll x){
     while(i <= n){
         tree[i] += x;
-        i += (i & -i);
-    }
-}
-
-void rem(int i, ll x){
-    while(i <= n){
-        tree[i] -= x;
         i += (i & -i);
     }
 }
@@ -39,7 +32,7 @@ int main(){
     a.resize(n + 1, 0); tree.resize(n + 1, 0);
     for(int i = 1; i <= n; i++){
         cin >> a[i];
-        add(i, a[i]);
+        update(i, a[i]);
     }
     while(q--){
         int qt; cin >> qt;
@@ -47,14 +40,14 @@ int main(){
             int i; ll x;
             cin >> i >> x;
             i++;
-            rem(i, x);
+            update(i, -x);
             a[i] -= x;
         }
         else if(qt == 2){
             int i; ll x;
             cin >> i >> x;
             i++;
-            add(i, x);
+            update(i, x);
             a[i] += x;
         }
         else{
