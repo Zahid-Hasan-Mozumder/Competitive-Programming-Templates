@@ -32,21 +32,8 @@ void query(int i, ll &sum){
     }
 }
 
-void zahid(){
-    #ifndef ONLINE_JUDGE
-    freopen("input.txt", "r", stdin);
-    freopen("output.txt", "w", stdout);
-    freopen("Error.txt", "w", stderr);
-    #endif
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    cout.tie(NULL);
-}
-
 int main(){
-
-    zahid();
-
+    
     cin >> n >> q;
     a.clear(); tree.clear();
     a.resize(n + 1, 0); tree.resize(n + 1, 0);
