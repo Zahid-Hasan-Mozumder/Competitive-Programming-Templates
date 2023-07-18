@@ -1,8 +1,8 @@
-string longDivision(string dividend, lli divisor){
+string longDivision(string dividend, ll divisor){
     string result;
-    lli carry = 0;
+    ll carry = 0;
     for(int i=0; i<dividend.size(); i++){
-        lli curr = carry * 10 + (dividend[i] - '0');
+        ll curr = carry * 10 + (dividend[i] - '0');
         result.push_back('0' + (curr / divisor));
         carry = curr % divisor;
     }
