@@ -3,7 +3,7 @@
 using namespace std;
 
 #define ll long long int
-const ll mod = 1e6+3;
+const ll mod = 1e6 + 3;
 
 ll POW_MOD(ll a, ll b){
     if(b == 0)
