@@ -6,9 +6,9 @@ using namespace std;
 vector<int> size, parent;
 
 void init(int n){
-    size.resize(n+1, 1); 
-    parent.resize(n+1);
-    for(int i=1; i<=n; i++) parent[i] = i;
+    size.resize(n + 1, 1); 
+    parent.resize(n + 1);
+    for(int i = 1; i <= n; i++) parent[i] = i;
 }
 
 int find(int v){
