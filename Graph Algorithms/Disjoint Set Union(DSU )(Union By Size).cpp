@@ -6,8 +6,8 @@ using namespace std;
 vector<int> size, parent;
 
 void init(int n){
-    size.resize(n + 1, 1); 
-    parent.resize(n + 1);
+    parent.clear(); parent.resize(n + 1);
+    size.clear(); size.resize(n + 1, 1);
     for(int i = 1; i <= n; i++) parent[i] = i;
 }
 
