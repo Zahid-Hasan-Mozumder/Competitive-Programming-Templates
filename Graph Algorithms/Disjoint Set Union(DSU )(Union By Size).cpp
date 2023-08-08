@@ -3,11 +3,11 @@
 
 using namespace std;
 
-vector<int> size, parent;
+vector<int> sz, parent;
 
 void init(int n){
     parent.clear(); parent.resize(n + 1);
-    size.clear(); size.resize(n + 1, 1);
+    sz.clear(); sz.resize(n + 1, 1);
     for(int i = 1; i <= n; i++) parent[i] = i;
 }
 
@@ -23,11 +23,11 @@ void Union(int u, int v){
     // If u and v are in different group
     if(pu != pv){
         // Always keeping the big tree or group at left
-        if(size[pu] < size[pv])
+        if(sz[pu] < sz[pv])
             swap(pu, pv);
         // Attaching right smallest group to left biggest group
         parent[pv] = pu;
-        size[pu] += size[pv];
+        sz[pu] += sz[pv];
     }
 }
 
