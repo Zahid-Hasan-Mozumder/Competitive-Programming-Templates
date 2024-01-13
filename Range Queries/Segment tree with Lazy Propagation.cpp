@@ -62,13 +62,18 @@ void query(int ind, int st, int en, int l, int r, ll &sum){
     tree[ind] = tree[2 * ind + 1] + tree[2 * ind + 2];
 }
 
+void init(){
+    for(int i=0; i<N; i++) a[i] = 0;
+    for(int i=0; i<4*N; i++) tree[i] = 0;
+    for(int i=0; i<4*N; i++) lazy[i] = 0;
+}
+
 int main(){
     
     int t; cin>>t;
     while(t--){
-        for(int i=0; i<N; i++) a[i] = 0;
-        for(int i=0; i<4*N; i++) tree[i] = 0;
-        for(int i=0; i<4*N; i++) lazy[i] = 0;
+
+        init();
         
         int n, q; cin>>n>>q;
         for(int i=0; i<n; i++) cin>>a[i];
