@@ -57,16 +57,15 @@ vb vis, inPath;
 bool isCycle(int i){
     vis[i] = true;
     inPath[i] = true;
-    for(auto v : al[i]){
-        if(!vis[v]){
-            return isCycle(v);
-        }
-        if(inPath[v]){
+    bool cycle = false;
+    for(auto it : g[i]){
+        if(!vis[it])
+            cycle |= isCycle(it);
+        if(inPath[it])
             return true;
-        }
     }
     inPath[i] = false;
-    return false;
+    return cycle;
 }
 
 void zahid(){
