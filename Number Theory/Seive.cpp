@@ -1,5 +1,5 @@
 const int sz = 1e6+2;
-vector<bool> mark(sz, 0);
+bitset<sz> mark;
 vector<int> primes;
 
 void SEIVE(){
